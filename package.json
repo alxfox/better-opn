@@ -18,7 +18,7 @@
     "browser"
   ],
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=20.0.0"
   },
   "files": [
     "dist",
@@ -49,7 +49,7 @@
     "test": "ava"
   },
   "dependencies": {
-    "open": "^8.0.4"
+    "open": "^11.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",

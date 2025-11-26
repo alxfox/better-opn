@@ -45,7 +45,7 @@ const normalizeURLToMatch = target => {
 // Copy from
 // https://github.com/facebook/create-react-app/blob/master/packages/react-dev-utils/openBrowser.js#L64
 // eslint-disable-next-line unicorn/prevent-abbreviations
-const startBrowserProcess = (browser, url, opts = {}, args = []) => {
+const startBrowserProcess = async (browser, url, opts = {}, args = []) => {
   // If we're on OS X, the user hasn't specifically
   // requested a different browser, we can try opening
   // Chrome with AppleScript. This lets us reuse an
@@ -105,7 +105,8 @@ const startBrowserProcess = (browser, url, opts = {}, args = []) => {
     wait: false,
     ...opts,
   };
-  return require('open')(url, options);
+  const open = (await import('open')).default;
+  return open(url, options);
 };
 
 module.exports = (target, options) => {
